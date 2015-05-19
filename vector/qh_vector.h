@@ -12,6 +12,12 @@ namespace qh
         {
         }
 
+        vector(const vector<T>& rhs)
+            : data_(NULL), size_(0), capacity_(0)
+        {
+            *this = rhs;
+        }
+
         explicit vector( size_t n, const T& value = T())
             : data_(NULL), size_(0), capacity_(0)
         {
