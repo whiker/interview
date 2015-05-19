@@ -29,9 +29,11 @@ namespace qh
     private:
         char*  data_;
         size_t len_;
+
+    private:
+        void _init(const char* s, size_t len);
+        void _release();
     };
 }
 
 #endif
-
-
