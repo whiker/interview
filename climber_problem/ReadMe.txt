@@ -1,1 +1,5 @@
-题目内容请通过图片链接阅读：https://github.com/zieckey/interview/blob/master/climber_problem/The%20problem.png 
+我的解法的时间复杂度是O(n)。
+
+思路：
+第1步，遍历矩形删除属于每个矩形内部的其它矩形顶点。例如，"The problem.png"中的示例，用矩形(2,4,4)可删除矩形(1,3,2)的右顶点。第1次先把矩形按左顶点坐标排序(比较函数compMountLeft)，再遍历矩形看能否删除其它矩形的左顶点，对应main.cc的92~103行。第2次先把矩形按右顶点坐标排序(比较函数compMountRight)，再删除右顶点。
+第2步，剩余的顶点是边界点，是爬三者要经过的各个顶点，把这些顶点按坐标排序(比较函数compPoint)后，计算路径长度walk得到结果。
