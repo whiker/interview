@@ -14,7 +14,7 @@ void test1()
     const std::string& a = parser.Get("a", NULL);
     assert(a == "1");
 
-    std::string b = parser.Get("a", NULL);
+    std::string b = parser.Get("b", NULL);
     assert(b == "2");
 
     const std::string& c = parser.Get("c", NULL);
@@ -32,7 +32,7 @@ void test2()
     const std::string& a = parser.Get("a", NULL);
     assert(a == "1");
 
-    std::string b = parser.Get("a", NULL);
+    std::string b = parser.Get("b", NULL);
     assert(b == "2");
 
     const std::string& c = parser.Get("c", NULL);
