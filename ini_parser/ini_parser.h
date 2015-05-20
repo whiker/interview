@@ -2,14 +2,19 @@
 #define QIHOO_INI_PARSER_H_
 
 #include <string>
+#include <map>
 
 namespace qh
 {
     class INIParser
     {
     public:
-        INIParser();
-        ~INIParser();
+        typedef std::map<std::string, std::string>            KeyValuePairs;
+        typedef std::map<std::string, std::string>::iterator  KeyValuePairsIter;
+
+    public:
+        INIParser()  { key_value_.clear(); }
+        ~INIParser() { }
 
         //! \brief 解析一个磁盘上的INI文件
         //! \param[in] - const std::string & ini_file_path
@@ -37,6 +42,13 @@ namespace qh
         const std::string& Get(const std::string& section, const std::string& key, bool* found);
 
     private:
+        KeyValuePairs key_value_;
+
+    private:
+        static std::string NULL_STR_;
+
+    private:
+        const char* myStrstr(const char* src, const size_t len, const char* dst);
     };
 }
 
